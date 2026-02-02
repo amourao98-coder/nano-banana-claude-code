@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "playground"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(mkdir*)",
+      "Bash(ls*)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep"
+    ]
+  }
+}
