@@ -1,43 +1,49 @@
 # nano-banana-claude-code
 
-A branding illustration workspace using Claude Code playground plugin.
+Generate and iteratively improve branding illustrations using Claude Code with Nano Banana Pro.
+
+## Prerequisites
+
+Before using, you need:
+
+1. **Gemini API Key** - Get one from [Google AI Studio](https://aistudio.google.com/api-keys)
+2. **Set the environment variable**:
+   ```bash
+   export GEMINI_API_KEY="your-api-key-here"
+   ```
 
 ## Quick Start
 
-**Open the Illustration Prompt Builder:**
+In Claude Code, ask:
+
+> "Generate a branding illustration of [your subject] in my brand style"
+
+Claude will use the Nano Banana skill to generate images matching your brand style.
+
+## The Workflow
+
+### 1. Generate an Image
+Ask Claude to generate an image:
 ```
-playgrounds/illustration-prompt-builder.html
-```
-Open this file in your browser to start creating consistent AI image prompts for your branding.
-
----
-
-## What This Project Does
-
-This workspace helps you create consistent branding illustrations by:
-1. **Crafting prompts** for AI image generators (DALL-E, Midjourney, etc.)
-2. **Maintaining style consistency** across all generated illustrations
-3. **Documenting your visual identity** for reference
-
-## Project Structure
-
-```
-nano-banana-claude-code/
-├── .claude/
-│   └── settings.json              # Claude Code configuration
-├── branding/
-│   ├── reference-images/          # Store your base/reference images
-│   ├── generated/                 # Save generated illustrations
-│   └── style-guide/
-│       └── STYLE_GUIDE.md         # Complete style documentation
-├── playgrounds/
-│   └── illustration-prompt-builder.html  # Interactive prompt builder
-└── README.md
+"Create a portrait illustration of a person presenting data charts, using my brand style"
 ```
 
-## Your Style Guide
+### 2. Review & Annotate
+Ask Claude to create a playground for annotation:
+```
+"Create a playground to annotate this image so I can mark what to improve"
+```
 
-Based on your reference illustration, your brand style includes:
+### 3. Iterate
+After marking improvements:
+```
+"Regenerate the image with these changes: [your feedback]"
+```
+
+### 4. Repeat
+Continue the generate → annotate → improve loop until satisfied.
+
+## Your Brand Style
 
 | Element | Specification |
 |---------|---------------|
@@ -47,48 +53,54 @@ Based on your reference illustration, your brand style includes:
 | **Composition** | Circular pink backdrop, geometric accents |
 | **Aesthetic** | Modern, professional, approachable |
 
-See `branding/style-guide/STYLE_GUIDE.md` for complete documentation.
+See `branding/style-guide/STYLE_GUIDE.md` for complete style documentation.
 
-## How to Use
+## Project Structure
 
-### 1. Use the Prompt Builder
-Open `playgrounds/illustration-prompt-builder.html` in your browser:
-- Select a preset (Portrait, Scene, Icon, Social, Marketing)
-- Customize subject, action, colors, and style elements
-- Click "Generate Prompt" and copy to your AI image tool
-
-### 2. Example Prompts
-
-**Portrait illustration:**
 ```
-A woman with curly dark hair, confident smile, flat vector illustration,
-bold dark outlines, limited palette (coral pink, teal, cream),
-clean crisp edges, cream background with pink circular frame,
-modern professional aesthetic
-```
-
-**Icon/Element:**
-```
-Hexagonal icons representing data and creativity, flat vector style,
-teal and coral accents, bold outlines, geometric shapes,
-professional branding illustration
+nano-banana-claude-code/
+├── .claude/
+│   ├── settings.json                # Claude Code configuration
+│   └── skills/
+│       └── nano-banana/
+│           └── SKILL.md             # Image generation skill
+├── branding/
+│   ├── reference-images/            # Your base/reference images
+│   ├── generated/                   # AI-generated illustrations
+│   └── style-guide/
+│       └── STYLE_GUIDE.md           # Brand style documentation
+├── playgrounds/                     # Generated annotation playgrounds
+└── README.md
 ```
 
-### 3. Store Your Work
-- Put reference images in `branding/reference-images/`
-- Save generated images in `branding/generated/`
-- Update the style guide as your brand evolves
+## Example Prompts
 
-## Available Claude Code Playgrounds
+**Portrait:**
+```
+Generate a portrait of a woman with curly hair presenting geometric data visualizations,
+flat vector illustration, bold dark outlines, coral and teal accents, cream background
+with pink circular frame
+```
 
-You can also ask Claude to create additional playgrounds:
+**Icon:**
+```
+Create a hexagonal icon representing AI and creativity, flat vector style,
+teal and coral colors, bold outlines, professional branding aesthetic
+```
 
-| Template | Use Case |
-|----------|----------|
-| **design-playground** | Explore layouts, colors, typography |
-| **concept-map** | Map out brand concepts and ideas |
-| **document-critique** | Review brand guidelines |
+**Scene:**
+```
+Generate a hero illustration showing people collaborating around floating data charts,
+flat vector art, limited palette (coral, teal, cream), geometric accent shapes
+```
 
-## Configuration
+## Plugins & Skills
 
-The playground plugin is configured in `.claude/settings.json`.
+This project uses:
+- **playground** - Create interactive annotation tools for image feedback
+- **nano-banana** - Generate images using Gemini's Nano Banana Pro model
+
+## Resources
+
+- [Nano Banana Skill](https://github.com/kkoppenhaver/cc-nano-banana)
+- [Claude Code Playground Plugin](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground)

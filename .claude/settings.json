@@ -2,8 +2,12 @@
   "plugins": [
     "playground"
   ],
+  "skills": [
+    ".claude/skills/nano-banana"
+  ],
   "permissions": {
     "allow": [
+      "Bash(gemini*)",
       "Bash(mkdir*)",
       "Bash(ls*)",
       "Read",
@@ -12,5 +16,8 @@
       "Glob",
       "Grep"
     ]
+  },
+  "env": {
+    "NANOBANANA_MODEL": "gemini-3-pro-image-preview"
   }
 }
