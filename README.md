@@ -1,61 +1,94 @@
 # nano-banana-claude-code
 
-A project configured to use the Claude Code playground plugin.
+A branding illustration workspace using Claude Code playground plugin.
 
-## Getting Started
+## Quick Start
 
-This repository is set up to use Claude Code's **playground plugin**, which creates interactive HTML playgrounds for various use cases.
-
-### Available Playground Templates
-
-You can ask Claude to create playgrounds using these templates:
-
-| Template | Use Case |
-|----------|----------|
-| **design-playground** | Visual design decisions (components, layouts, spacing, colors, typography) |
-| **data-explorer** | Data and query building (SQL, APIs, pipelines, regex) |
-| **concept-map** | Learning and exploration (concept maps, knowledge gaps, scope mapping) |
-| **document-critique** | Document review with approve/reject/comment workflow |
-| **diff-review** | Code review for git diffs, commits, PRs with line-by-line commenting |
-| **code-map** | Codebase architecture visualization (component relationships, data flow) |
-
-### How to Use
-
-1. Start a Claude Code session in this directory
-2. Ask Claude to create a playground, for example:
-   - "Create a design playground to explore button styles"
-   - "Make a data explorer for testing SQL queries"
-   - "Build a concept map for learning React hooks"
-   - "Create a code map to visualize the project architecture"
-
-3. Claude will generate a single HTML file with:
-   - Live preview that updates instantly
-   - Visual controls for experimentation
-   - Natural language prompt output with copy button
-   - Dark theme with sensible defaults
-
-### Example Prompts
-
+**Open the Illustration Prompt Builder:**
 ```
-"Create a design playground to explore different card component layouts"
-
-"Make a data explorer to help me build and test regex patterns"
-
-"Create a concept map to understand the authentication flow in this project"
-
-"Build a diff-review playground to analyze the recent commits"
+playgrounds/illustration-prompt-builder.html
 ```
+Open this file in your browser to start creating consistent AI image prompts for your branding.
 
-### Configuration
+---
 
-The playground plugin is configured in `.claude/settings.json`. You can customize permissions and add additional plugins as needed.
+## What This Project Does
+
+This workspace helps you create consistent branding illustrations by:
+1. **Crafting prompts** for AI image generators (DALL-E, Midjourney, etc.)
+2. **Maintaining style consistency** across all generated illustrations
+3. **Documenting your visual identity** for reference
 
 ## Project Structure
 
 ```
 nano-banana-claude-code/
 ├── .claude/
-│   └── settings.json    # Claude Code configuration
-├── playgrounds/         # Generated playground HTML files (created on demand)
+│   └── settings.json              # Claude Code configuration
+├── branding/
+│   ├── reference-images/          # Store your base/reference images
+│   ├── generated/                 # Save generated illustrations
+│   └── style-guide/
+│       └── STYLE_GUIDE.md         # Complete style documentation
+├── playgrounds/
+│   └── illustration-prompt-builder.html  # Interactive prompt builder
 └── README.md
 ```
+
+## Your Style Guide
+
+Based on your reference illustration, your brand style includes:
+
+| Element | Specification |
+|---------|---------------|
+| **Art Style** | Flat vector illustration |
+| **Outlines** | Bold, dark brown/black |
+| **Colors** | Coral (#E8A0A0), Teal (#5B9A9A), Cream (#F5F0EB), Tan (#C4A574) |
+| **Composition** | Circular pink backdrop, geometric accents |
+| **Aesthetic** | Modern, professional, approachable |
+
+See `branding/style-guide/STYLE_GUIDE.md` for complete documentation.
+
+## How to Use
+
+### 1. Use the Prompt Builder
+Open `playgrounds/illustration-prompt-builder.html` in your browser:
+- Select a preset (Portrait, Scene, Icon, Social, Marketing)
+- Customize subject, action, colors, and style elements
+- Click "Generate Prompt" and copy to your AI image tool
+
+### 2. Example Prompts
+
+**Portrait illustration:**
+```
+A woman with curly dark hair, confident smile, flat vector illustration,
+bold dark outlines, limited palette (coral pink, teal, cream),
+clean crisp edges, cream background with pink circular frame,
+modern professional aesthetic
+```
+
+**Icon/Element:**
+```
+Hexagonal icons representing data and creativity, flat vector style,
+teal and coral accents, bold outlines, geometric shapes,
+professional branding illustration
+```
+
+### 3. Store Your Work
+- Put reference images in `branding/reference-images/`
+- Save generated images in `branding/generated/`
+- Update the style guide as your brand evolves
+
+## Available Claude Code Playgrounds
+
+You can also ask Claude to create additional playgrounds:
+
+| Template | Use Case |
+|----------|----------|
+| **design-playground** | Explore layouts, colors, typography |
+| **concept-map** | Map out brand concepts and ideas |
+| **document-critique** | Review brand guidelines |
+
+## Configuration
+
+The playground plugin is configured in `.claude/settings.json`.
